@@ -155,6 +155,7 @@ export default function DetectionPage() {
     setResult(null);
 
     try {
+      //credential in .env file
       const API_KEY = process.env.NEXT_PUBLIC_PLANTNET_API_KEY;
       const PROJECT = process.env.NEXT_PUBLIC_PLANTNET_PROJECT;
 
