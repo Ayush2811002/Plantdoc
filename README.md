@@ -57,14 +57,14 @@ ESP8266 ──► Firebase RTDB ──► Live Monitoring Dashboard
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| Next.js 15 | Frontend |
-| TypeScript | Development |
-| Tailwind CSS | UI/UX |
-| Firebase RTDB | Real-time Database |
-| ESP8266 NodeMCU | IoT Controller |
-| Chart.js | Live Sensor Graphs |
+| Technology           | Purpose                    |
+| -------------------- | -------------------------- |
+| Next.js 15           | Frontend                   |
+| TypeScript           | Development                |
+| Tailwind CSS         | UI/UX                      |
+| Firebase RTDB        | Real-time Database         |
+| ESP8266 NodeMCU      | IoT Controller             |
+| Chart.js             | Live Sensor Graphs         |
 | **Plant.id API Kit** | AI Plant Disease Detection |
 
 ---
@@ -104,11 +104,34 @@ PlantDoc+
 ## ⚙️ Hardware Components
 
 - ESP8266 NodeMCU
-- DHT11/DHT22 Sensor
+- DHT11 Temperature & Humidity Sensor
 - Soil Moisture Sensor
+- SSD1306 OLED Display (128×64)
 - Relay Module
+- Active Buzzer
 - Water Pump
-- Power Supply
+- Push Buttons
+- 5V Power Supply
+
+---
+
+## 📶 First-Time ESP8266 WiFi Setup
+
+After uploading the firmware, the ESP8266 creates its own WiFi hotspot using **WiFiManager**.
+
+### Steps
+
+1. Upload the firmware to the ESP8266 NodeMCU.
+2. Power on the device.
+3. Open WiFi settings on your phone or laptop.
+4. Connect to the hotspot named **PlantDoc**.
+5. If the configuration page doesn't open automatically, visit **192.168.4.1**.
+6. Select your home WiFi network.
+7. Enter the WiFi password.
+8. Click **Save & Connect**.
+9. The device will restart and begin sending live data to Firebase.
+
+> **Important:** ESP8266 supports **2.4 GHz WiFi only**. 5 GHz networks are not supported.
 
 ---
 
@@ -173,6 +196,14 @@ We welcome contributions from developers, IoT enthusiasts, and AI researchers.
 5. Open a Pull Request
 
 ---
+
+- 📶 Automatic WiFi provisioning using WiFiManager
+- ☁️ Firebase Realtime Database integration
+- 🌡️ Real-time temperature & humidity monitoring
+- 🌱 Soil moisture monitoring with smart irrigation
+- 🔔 Configurable temperature alerts with buzzer
+- 🖥️ OLED display for live sensor data
+- 🔍 AI Plant Disease Identification using Plant.id API Kit
 
 ## 👨‍💻 Author
 
