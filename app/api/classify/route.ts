@@ -9,14 +9,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ category: "common" }, { status: 400 });
     }
 
-    const token = "Zs2Fs6zwM-Djezw57qYpP5t4JUzJK_4IjaoVB6zI-Yo";
+    const token = process.env.NEXT_PUBLIC_TOKEN;
     if (!token) {
       console.error("TREFLE_TOKEN not set");
       return NextResponse.json({ category: "common" }, { status: 500 });
     }
 
     const url = `https://trefle.io/api/v1/species/search?token=${token}&q=${encodeURIComponent(
-      name
+      name,
     )}&limit=1`;
 
     const res = await fetch(url);
@@ -43,13 +43,13 @@ export async function POST(req: Request) {
       category = "medicinal";
     } else if (
       /vegetable|root|leaf vegetable|tomato|potato|onion|carrot|spinach|okra|eggplant|brinjal|aubergine/.test(
-        text
+        text,
       )
     ) {
       category = "vegetable";
     } else if (
       /fruit|berry|mango|banana|apple|pear|citrus|grape|papaya|pineapple|cherry/.test(
-        text
+        text,
       )
     ) {
       category = "fruit";
